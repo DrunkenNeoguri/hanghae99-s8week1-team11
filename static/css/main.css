@@ -65,6 +65,8 @@ body {
   display: block;
 
   font-size: 0.7rem;
+  text-decoration: none;
+  color:#000000;
 
   border: none;
   outline: none;
@@ -72,9 +74,15 @@ body {
   margin-left: auto;
   margin-right: 1rem;
 
+  transition: 0.05s ease;
   cursor: pointer;
 }
 
+.container--header__button:hover {
+  color: skyblue;
+
+  transition: 0.05s ease;
+}
 
 /* slideshow set */
 .fade {
