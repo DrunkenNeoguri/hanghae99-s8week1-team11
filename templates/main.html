@@ -13,6 +13,10 @@
 <body>
   <div class="container">
     <section class="container--image">
+
+      <div class="container--image__slidesshadow">
+        <h1>우리 모두를 위한 스포츠,<br> 음지의 스포츠.</h1>
+      </div>
       <div class="container--image__slides fade">
         <img
           src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -43,10 +47,12 @@
       </div>
       <div class="container--body__list">
         {% for sport in sports_list %}
-        <div class="container--body__list__slot">
-          <img src="{{ sport.url }}" alt="detail image">
-          <h2 class="list__slot__title">{{ sport.title }}</h2>
-          <p class="list__slot__keyword">{{ sport.keyword }}</p>
+        <div class="list__outerSlot">
+          <div class="list__innerSlot">
+            <img src="{{ sport.url }}" alt="detail image">
+            <h2 class="list__slot__title">{{ sport.title }}</h2>
+            <p class="list__slot__keyword">{{ sport.keyword }}</p>
+          </div>
         </div>
         {% endfor %}
       </div>
