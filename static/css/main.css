@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@import url('https://webfontworld.github.io/sandbox/SBAggro.css'); /* 주제 */
+@import url('https://webfontworld.github.io/NexonFootballGothic/NexonFootballGothic.css'); /* 본문 */
+
+ /* background */
+  /* display */
+  /* font */
+  /* border, padding, margin */
+  /* width, height */
+  /* etc */
+
+/* basic page set */
+* {
+  font-family: "SBAggro", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+body {
+  margin:0;
+
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin:0;
+
+  box-sizing: border-box;
+}
+
+
+/* header set */
+.container--header {
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+
+  margin:0;
+
+  height:2.5rem;
+  width: 100vw;
+
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+
+.container--header__logo {
+  display: block;
+
+  margin-left: 1rem;
+  margin-right: auto;
+
+  cursor: pointer;
+}
+
+.container--header__button {
+  background: none;
+
+  display: block;
+
+  font-size: 0.7rem;
+
+  border: none;
+  outline: none;
+
+  margin-left: auto;
+  margin-right: 1rem;
+
+  cursor: pointer;
+}
+
+
+/* slideshow set */
+.fade {
+  animation-name: fadein;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadein {
+  from {
+      opacity: 0.7;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.container--image {
+  display: block;
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}
+
+.container--image > .container--image__slidesshadow > h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  padding:1rem;
+  margin:auto;
+
+  transform: translateY(10vh);
+}
+
+.container--image__slides {
+  display:none;
+}
+
+.container--image__slides > img {
+  width:100vw;
+  height:100%;
+}
+
+.container--image__prevbtn, .container--image__nextbtn {
+  background: none;
+
+  position: absolute;
+
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  
+  border: none;
+  padding: 1rem;
+ 
+  top: 50%;
+  width: auto;
+
+  transition: 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.container--image__nextbtn {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.container--image__prevbtn:hover, .container--image__nextbtn:hover {
+  transform: scale(2);
+}
+
+.container--image__slidesshadow {
+  background-color: rgba(0,0,0, 10%);
+
+  position: absolute;
+
+  width:100vw;
+  height:100%;
+  z-index: 2;
+}
+
+
+/* body set */
+.container--body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container--body__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:4rem;
+
+  margin-bottom: 2rem;
+}
+
+.list__innerSlot {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding:0;
+  margin:0;
+  width: 16rem;
+
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 10px;
+
+  transition: 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.list__outerSlot {
+  transform: translateY(50px) rotate(-5deg) translateZ(0);
+  transition-delay: .3s;
+  transition: .4s;
+  opacity: 0;
+
+  cursor:pointer;
+}
+
+.list__outerSlot.inView {
+  opacity: 1;
+  transform: translateY(0px) rotate(0deg) translateZ(0);
+}
+
+.list__innerSlot > img {
+  display: flex;
+
+  width: 16rem;
+  border-radius: 9px 9px 0 0;
+  box-sizing: border-box;
+
+  margin-top: 0;
+}
+
+.list__innerSlot > h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 1rem auto 0 1rem;
+
+}
+
+.list__innerSlot > p {
+  font-size: 0.8rem;
+  font-family: "NexonFootballGothic", sans-serif;
+  text-align: left;
+  color:gray;
+
+  height: 2rem;
+  padding-right:1rem;
+  margin: 1rem auto 2rem 1rem;
+
+}
+
+.list__innerSlot:hover {
+  box-shadow: 0px 0px 20px skyblue;
+  transition: 0.2s ease;
+  transform: scale(1.02);
+}
+
+@media(max-width: 1366px) {
+  .container--body__list {
+    grid-template-columns: 1fr 1fr;
+  
+  }
+}
+
+@media(max-width: 900px) {
+  .container--body__list {
+    grid-template-columns: 1fr;
+  
+  }
+}

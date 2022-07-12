@@ -1,0 +1,5 @@
+<section class="container--header">
+  <div class="container--header__logo">음지의 스포츠</div>
+  <button type="button" class="container--header__button" href="text">스포츠 작성하기</button>
+  <div class="container--header__profile"></div>
+</section>

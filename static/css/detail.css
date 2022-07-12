@@ -1,0 +1,179 @@
+@charset "UTF-8";
+@import url('https://webfontworld.github.io/sandbox/SBAggro.css'); /* 주제 */
+@import url('https://webfontworld.github.io/NexonFootballGothic/NexonFootballGothic.css'); /* 본문 */
+
+/* basic page set */
+* {
+  font-family: 'SBAggro', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(242,236,126,0.95) 0%, rgba(252,238,131,0.99) 25%, rgba(230,211,130,0.9) 50%, rgba(252,222,131,0.99) 75%, rgba(242,207,131,1) 95%);
+
+  margin:0;
+
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin:0;
+
+  box-sizing: border-box;
+}
+
+
+/* header set */
+.container--header {
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+
+  margin:0;
+
+  height:2.5rem;
+  width: 100vw;
+
+  box-sizing: border-box;
+}
+
+.container--header__logo {
+  display: block;
+
+  margin-left: 1rem;
+  margin-right: auto;
+
+  cursor: pointer;
+}
+
+.container--header__button {
+  background: none;
+
+  display: block;
+
+  font-size: 0.7rem;
+
+  border: none;
+  outline: none;
+
+  margin-left: auto;
+  margin-right: 1rem;
+
+  cursor: pointer;
+}
+
+
+/* body box set */
+.container--body {
+  background-color: white;
+  
+  padding:1rem;
+  margin: auto;
+  margin-top:5rem;
+
+  height: 22rem;
+  width:40rem;
+
+  border-radius: 2rem;
+  box-shadow: 20px 20px 0px 0px gray;
+}
+
+.container--body__content {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap:1rem;
+}
+
+
+
+/* left division set */
+.content__leftdiv  {
+  padding: 0.5rem 0 0 1rem;
+
+}
+
+.content__leftdiv h1 {
+  font-size: 1.5rem;
+
+  padding-left: 1rem;
+
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.content__leftdiv > div {
+
+  border-radius: 1rem;
+  width: 13rem;
+  height: 18rem;
+
+  overflow: hidden;
+}
+
+.content__leftdiv > div > img {
+
+  height:18rem;
+  transform: translateX(-25%);
+}
+
+
+
+/* right division set */
+.content__rightdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  height: 21rem;
+}
+.content__rightdiv__gerne > p {
+  color: gray;
+}
+
+.content__rightdiv__context > p {
+  color: gray;
+}
+
+.content__rightdiv__url > a {
+  color: #50b2cb;
+}
+
+.content__rightdiv > a {
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.content__rightdiv > a {
+  background-color: #f2cf83;
+
+  text-decoration: none;
+  color:#423f3a;
+  font-size: 1rem;
+
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  margin-top: auto;
+  margin-left: auto;
+  box-shadow: 3px 3px 10px rgba(98,95,86,0.5);
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.content__rightdiv > a:hover {
+  background-color: #fcde83;
+
+  color: #67635d;
+  font-weight:normal;
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
