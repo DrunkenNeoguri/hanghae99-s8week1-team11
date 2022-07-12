@@ -12,53 +12,26 @@
 
 <body>
   <div class="container">
-    <section class="container--menu">
-      <div class="container--menu__logo">음지의 스포츠</div>
-      <button class="container--menu__button">스포츠 작성하기</button>
-      <div class="container--menu__profile"></div>
-    </section>
-    <section class="container--header">
-      <div class="container--header__slides fade">
+    <section class="container--image">
+      <div class="container--image__slides fade">
         <img src="https://www.sendible.com/hubfs/Imported_Blog_Media/sm-olympic-campaigns-header.jpg" alt="">
       </div>
-      <!-- <div class="container--header__slides fade">
-        <img src="" alt="">
-      </div>
-      <div class="container--header__slides fade">
-        <img src="" alt="">
-      </div>
-      <div class="container--header__slides fade">
-        <img src="" alt="">
-      </div> -->
     </section>
     <section class="container--body">
       <div class="container--body__filter">
 
       </div>
       <div class="container--body__list">
+        {% for sport in sports_list %}
         <div class="container--body__list__slot">
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_16-9_760/f_auto/v1538355600/primary/mb9dhrttc6d8sskpyndo"
-            alt="detail image">
-          <h2 class="list__slot__title">테스트</h2>
-          <p class="list__slot__keyword">키워드</p>
+          <img src="{{ sport.url }}" alt="detail image">
+          <h2 class="list__slot__title">{{ sport.title }}</h2>
+          <p class="list__slot__keyword">{{ sport.keyword }}</p>
         </div>
-        <div class="container--body__list__slot">
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_16-9_760/f_auto/v1538355600/primary/dxngqpf64bwss94yg8bd"
-            alt="detail image">
-          <h2 class="list__slot__title">테스트</h2>
-          <p class="list__slot__keyword">키워드</p>
-        </div>
-        <div class="container--body__list__slot">
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_16-9_480/f_auto/v1538355600/primary/tryv0cqyceo6m3dsviwz "
-            alt="detail image">
-          <h2 class="list__slot__title">테스트</h2>
-          <p class="list__slot__keyword">키워드</p>
-        </div>
+        {% endfor %}
       </div>
     </section>
+    {% extends "header" %}
   </div>
 </body>
 

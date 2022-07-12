@@ -26,8 +26,8 @@ body {
 }
 
 
-/* menu bar set */
-.container--menu {
+/* header set */
+.container--header {
   background-color: white;
 
   display: flex;
@@ -43,17 +43,16 @@ body {
   box-sizing: border-box;
 }
 
-.container--menu__logo {
+.container--header__logo {
   display: block;
 
-  font-size: 1.5rem;
   margin-left: 1rem;
   margin-right: auto;
 
   cursor: pointer;
 }
 
-.container--menu__button {
+.container--header__button {
   background: none;
 
   display: block;
@@ -151,9 +150,10 @@ body {
   margin-left: auto;
 }
 
-.content__rightdiv > a > button {
+.content__rightdiv > a {
   background-color: #f2cf83;
 
+  text-decoration: none;
   color:#423f3a;
   font-size: 1rem;
 
