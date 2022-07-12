@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 부트스트랩 CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/text.css">
+    <title>text</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            show_text_json();
+        });
+        function show_text() {
+            $.ajax({
+                type: 'GET',
+                url: '/text',
+                data: {},
+            });
+        }
+        function show_text_json() {
+            $.ajax({
+                type: 'GET',
+                url: '/word',
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        }
+
+        function save_text() {
+            let sportname = $('#sportname').val()
+            let username = $('#username').val()
+            let select1 = $('#select1').val()
+            let select2 = $('#select2').val()
+            let text = $('#text').val()
+            let link = $('#link').val()
+
+            $.ajax({
+                type: 'POST',
+                url: '/text',
+                data: { sportname_give: sportname, username_give: username, select1_give: select1, select2_give: select2, text_give: text, link_give: link },
+                success: function (response) {
+                    alert(response['msg'])
+                }
+            });
+        }
+        //이미지 업로드 프리뷰
+        $(function () {
+            $("#formFile").on('change', function () {
+                readURL(this);
+            });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="textpage">
+        <div class="container">
+            <div class="title-img">
+                <h3>스포츠 이름</h3>
+    
+                <input type="text" id="sportname" placeholder="스포츠 이름을 입력해주세요.">
+                <section id="이미지등록">
+                    <img id="blah" src="#" alt="your image">
+                    <div class="mb-3">
+                        <form id="form1" runat="server">
+                            <input type='file' class="form-control form-control-sm" id="formFile" accept="image/*">
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <div class="rightside">
+
+                <h3>작성자</h3>
+                <input type="text" id="username" placeholder="작성자를 입력하세요">
+
+
+                <h3>장소</h3>
+
+                <select name="장소" id="select1">
+                    <option value="" class="select_default" selected hidden> 선택</option>
+                    <option value="실내">실내</option>
+                    <option value="실외">실외</option>
+                </select>
+
+
+                <h3>계절</h3>
+
+                <select name="계절" id="select2">
+                    <option value="" class="select_default" selected hidden> 선택</option>
+                    <option value="상시">상시</option>
+                    <option value="하계">하계</option>
+                    <option value="동계">동계</option>
+                </select>
+
+
+                <div id="text-box">
+                    <h3>스포츠 정보</h3>
+                    <textarea name="text" id="text" rows="10" placeholder="여기에 내용을 입력해주세요." minlength="5"
+                        maxlength="1000"></textarea>
+                </div>
+
+                <div id="link-box">
+                    <h3>링크</h3>
+                    <input type="text" id="link" placeholder="link(선택)">
+
+                
+                </div>
+                
+
+                <section class="등록취소">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="save_text()">등록</button>
+                    <!-- 취소버튼 클릭시 메인페이지 이동 -->
+                    <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='/'">취소</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- 부트스트랩 JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

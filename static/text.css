@@ -1,0 +1,120 @@
+@import url('https://webfontworld.github.io/NexonFootballGothic/NexonFootballGothic.css');
+@import url('https://webfontworld.github.io/sandbox/SBAggro.css');
+
+*{
+    font-family: 'NexonFootballGothic';
+    font-size: 20px;
+    color: black;
+}
+
+body{
+    margin: 0 auto;
+    background-image: url('https://images.unsplash.com/photo-1617646339087-654bc92e57c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-color: black;
+}
+
+h1,h2,h3,h4{
+    font-family: 'SBAggro';
+    font-size: 24px;
+}
+
+input, textarea, select{
+    padding: 0 0 0 2%;
+    margin: 1% 0 2% 0;
+    border-radius: 8px;
+}
+
+::placeholder{
+    color: rgb(151, 151, 151);
+}
+
+/* 테두리 */
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 3% auto;
+    padding-bottom: 3rem;
+    width: 80%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 20px 20px 0px 0px gray;
+    box-sizing: border-box;
+  }
+
+img{
+    width: 100%;
+    max-height: 40vh;
+    margin: 10% 0 10% 0;
+}
+
+.title-img{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+
+#sportname{
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+}
+
+#img{
+box-sizing: border-box;
+color: white;
+font-size: 15px;
+    background-color: rgb(84, 83, 83);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+   
+}
+
+.rightside{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 50%;
+}
+
+.rightside h3{
+    margin: 3% 0 0 0;
+}
+
+#select1, #select2{
+    width: 30%;
+}
+
+#select1:hover, #select2:hover{
+    background-color: rgba(0, 157, 255, 0.847);
+}
+
+#text-box input{
+    text-align: initial;
+}
+
+#text{
+    margin-bottom: 0;
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+#link{
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.등록취소 {
+    align-self: flex-end;
+}
